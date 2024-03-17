@@ -51,6 +51,8 @@ declare module '@kaspa/core-lib' {
 
 			function ripemd160(buffer: Buffer): Buffer;
 
+			function blake3(buffer: Buffer): Buffer;
+
 			function sha256hmac(data: Buffer, key: Buffer): Buffer;
 
 			function sha512hmac(data: Buffer, key: Buffer): Buffer;
