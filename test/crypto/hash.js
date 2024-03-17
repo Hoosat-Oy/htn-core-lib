@@ -64,6 +64,39 @@ describe('Hash', function() {
 
   });
 
+  describe('#blake3hmac', function() {
+    it('calculates the hash of this buffer correctly', function() {
+      var hash = Hash.blake3hmac(buf);
+      hash.toString('hex').should.equal('be586c8b20dee549bdd66018c7a79e2b67bb88b7c7d428fa4c970976d2bec5ba');
+    });
+
+    it('fails when the input is not a buffer', function() {
+      Hash.blake3hmac.bind(Hash, str).should.throw('Invalid Argument');
+    });
+  });
+
+  describe('#blake3', function() {
+    it('calculates the hash of this buffer correctly', function() {
+      var hash = Hash.blake3(buf);
+      hash.toString('hex').should.equal('be586c8b20dee549bdd66018c7a79e2b67bb88b7c7d428fa4c970976d2bec5ba');
+    });
+
+    it('fails when the input is not a buffer', function() {
+      Hash.blake3.bind(Hash, str).should.throw('Invalid Argument');
+    });
+  });
+
+  describe('#blake3blake3', function() {
+    it('calculates the hash of this buffer correctly', function() {
+      var hash = Hash.blake3blake3(buf);
+      hash.toString('hex').should.equal('be586c8b20dee549bdd66018c7a79e2b67bb88b7c7d428fa4c970976d2bec5ba');
+    });
+
+    it('fails when the input is not a buffer', function() {
+      Hash.blake3blake3.bind(Hash, str).should.throw('Invalid Argument');
+    });
+  });
+
   describe('#sha256sha256', function() {
 
     it('calculates the hash of this buffer correctly', function() {
