@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@noble/hashes": "^1.4.0",
+    "blake2b-wasm": "^2.4.0",
     "bn.js": "=4.11.8",
     "bs58": "^4.0.1",
     "buffer-compare": "=1.1.1",

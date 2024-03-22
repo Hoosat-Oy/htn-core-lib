@@ -2,11 +2,12 @@
 
 
 const secp256k1 = require('secp256k1-wasm');
+const blake2b = require('blake2b-wasm');
+
 
 var kaspacore = module.exports;
 
 kaspacore.secp256k1 = secp256k1;
-
 
 // module information
 kaspacore.version = 'v' + require('./package.json').version;
@@ -24,6 +25,7 @@ global._kaspacoreLibVersion = kaspacore.version;
 
 const wasmModulesLoadStatus = new Map();
 kaspacore.wasmModulesLoadStatus = wasmModulesLoadStatus;
+wasmModulesLoadStatus.set("blake2b", false);
 wasmModulesLoadStatus.set("secp256k1", false);
 
 const setWasmLoadStatus = (mod, loaded) => {
@@ -40,6 +42,10 @@ const setWasmLoadStatus = (mod, loaded) => {
 		kaspacore.ready();
 }
 
+
+blake2b.ready(() => {
+	setWasmLoadStatus("blake2b", true);
+})
 
 secp256k1.onRuntimeInitialized = () => {
 	//console.log("onRuntimeInitialized")
