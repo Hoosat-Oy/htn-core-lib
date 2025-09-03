@@ -16,23 +16,23 @@ describe("URI", function () {
 
     URI.parse.bind(URI, "badURI").should.throw(TypeError);
 
-    uri = URI.parse("bitcoincash:");
+    uri = URI.parse("hoosat:");
     expect(uri.address).to.be.equal(undefined);
     expect(uri.amount).to.be.equal(undefined);
     expect(uri.otherParam).to.be.equal(undefined);
 
-    uri = URI.parse("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
+    uri = URI.parse("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
     uri.address.should.equal("qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
     expect(uri.amount).to.be.equal(undefined);
     expect(uri.otherParam).to.be.equal(undefined);
 
-    uri = URI.parse("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=123.22");
+    uri = URI.parse("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=123.22");
     uri.address.should.equal("qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
     uri.amount.should.equal("123.22");
     expect(uri.otherParam).to.be.equal(undefined);
 
     uri = URI.parse(
-      "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=123.22" + "&other-param=something&req-extra=param"
+      "hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=123.22" + "&other-param=something&req-extra=param"
     );
     uri.address.should.equal("qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
     uri.amount.should.equal("123.22");
@@ -86,7 +86,7 @@ describe("URI", function () {
     // cashaddr
     it("address only", function () {
       var uri;
-      var str = "bitcoincash:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g";
+      var str = "hoosat:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g";
       uri = URI.parse(str);
       uri.address.should.equal("qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g");
       expect(uri.amount).to.be.equal(undefined);
@@ -96,7 +96,7 @@ describe("URI", function () {
 
     it("address +amount", function () {
       var uri;
-      var str = "bitcoincash:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g?amount=123.22";
+      var str = "hoosat:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g?amount=123.22";
       uri = URI.parse(str);
       uri.address.should.equal("qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g");
       uri.amount.should.equal("123.22");
@@ -107,8 +107,7 @@ describe("URI", function () {
     it("address +amount + opts", function () {
       var uri;
       var str =
-        "bitcoincash:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g?amount=123.22" +
-        "&other-param=something&req-extra=param";
+        "hoosat:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g?amount=123.22" + "&other-param=something&req-extra=param";
       uri = URI.parse(str);
       uri.address.should.equal("qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g");
       uri.amount.should.equal("123.22");
@@ -121,8 +120,7 @@ describe("URI", function () {
     it("address +amount + opts", function () {
       var uri;
       var str =
-        "bitcoincash:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g?amount=123.22" +
-        "&other-param=something&req-extra=param";
+        "hoosat:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g?amount=123.22" + "&other-param=something&req-extra=param";
       uri = URI.parse(str);
       uri.address.should.equal("qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g");
       uri.amount.should.equal("123.22");
@@ -136,7 +134,7 @@ describe("URI", function () {
     it("address +amount + opts", function () {
       var uri;
       var str =
-        "bitcoincash:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g?amount=123.22" +
+        "hoosat:qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g?amount=123.22" +
         "&message=Donation%20for%20project%20xyz&label=myLabel";
       uri = URI.parse(str);
       uri.address.should.equal("qryan2ur3ff2x4arg4zaemevmncgewwl6swgk4az9g");
@@ -218,23 +216,23 @@ describe("URI", function () {
 
   // TODO: Split this and explain tests
   it("URIs can be validated statically (test vector)", function () {
-    URI.isValid("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m").should.equal(true);
+    URI.isValid("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m").should.equal(true);
 
-    URI.isValid("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2").should.equal(true);
-    URI.isValid("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&other=param").should.equal(true);
-    URI.isValid("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&req-other=param", [
+    URI.isValid("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2").should.equal(true);
+    URI.isValid("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&other=param").should.equal(true);
+    URI.isValid("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&req-other=param", [
       "req-other",
     ]).should.equal(true);
     URI.isValid(
-      "bitcoincash:mmrqEBJxUCf42vdb3oozZtyz5mKr3Vb2Em?amount=0.1&" +
+      "hoosat:mmrqEBJxUCf42vdb3oozZtyz5mKr3Vb2Em?amount=0.1&" +
         "r=https%3A%2F%2Ftest.bitpay.com%2Fi%2F6DKgf8cnJC388irbXk5hHu"
     ).should.equal(true);
 
-    URI.isValid("bitcoincash:").should.equal(false);
-    URI.isValid("bitcoincash:badUri").should.equal(false);
-    URI.isValid("bitcoincash:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfk?amount=bad").should.equal(false);
-    URI.isValid("bitcoincash:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfk?amount=1.2&req-other=param").should.equal(false);
-    URI.isValid("bitcoincash:?r=https%3A%2F%2Ftest.bitpay.com%2Fi%2F6DKgf8cnJC388irbXk5hHu").should.equal(false);
+    URI.isValid("hoosat:").should.equal(false);
+    URI.isValid("hoosat:badUri").should.equal(false);
+    URI.isValid("hoosat:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfk?amount=bad").should.equal(false);
+    URI.isValid("hoosat:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfk?amount=1.2&req-other=param").should.equal(false);
+    URI.isValid("hoosat:?r=https%3A%2F%2Ftest.bitpay.com%2Fi%2F6DKgf8cnJC388irbXk5hHu").should.equal(false);
   });
 
   // TODO: Split this and explain tests
@@ -265,7 +263,7 @@ describe("URI", function () {
   });
 
   it("do not need new keyword", function () {
-    var uri = URI("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
+    var uri = URI("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
     uri.should.be.instanceof(URI);
   });
 
@@ -279,20 +277,20 @@ describe("URI", function () {
     var uri;
 
     it("parses address", function () {
-      uri = new URI("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
+      uri = new URI("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
       uri.address.should.be.instanceof(hoosatcore.Address);
       uri.network.should.equal(Networks.livenet);
     });
 
     it("parses amount", function () {
-      uri = URI.fromString("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=123.22");
-      uri.address.toString().should.equal("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
+      uri = URI.fromString("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=123.22");
+      uri.address.toString().should.equal("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
       uri.amount.should.equal(12322000000);
       expect(uri.otherParam).to.be.equal(undefined);
     });
 
     it('stores unknown parameters as "extras"', function () {
-      uri = new URI("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&other=param");
+      uri = new URI("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&other=param");
       uri.address.should.be.instanceof(hoosatcore.Address);
       expect(uri.other).to.be.equal(undefined);
       uri.extras.other.should.equal("param");
@@ -300,15 +298,13 @@ describe("URI", function () {
 
     it("throws error when a required feature is not supported", function () {
       (function () {
-        return new URI(
-          "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&other=param&req-required=param"
-        );
+        return new URI("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&other=param&req-required=param");
       }).should.throw(Error);
     });
 
     it("has no false negative when checking supported features", function () {
       uri = new URI(
-        "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&other=param&" + "req-required=param",
+        "hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.2&other=param&" + "req-required=param",
         ["req-required"]
       );
       uri.address.should.be.instanceof(hoosatcore.Address);
@@ -389,14 +385,14 @@ describe("URI", function () {
 
     (function () {
       return new URI({
-        address: "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m",
+        address: "hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m",
         "req-required": "param",
       });
     }).should.throw(Error);
 
     uri = new URI(
       {
-        address: "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m",
+        address: "hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m",
         amount: 120000000,
         other: "param",
         "req-required": "param",
@@ -410,8 +406,8 @@ describe("URI", function () {
   });
 
   it("should support double slash scheme", function () {
-    var uri = new URI("bitcoincash://qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
-    uri.address.toString().should.equal("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
+    var uri = new URI("hoosat://qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
+    uri.address.toString().should.equal("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
 
     uri = new URI("bchtest://qqkj609un9sl896yezxj0j5hxagk7h7pnyyzaz887x");
     uri.address.toString().should.equal("bchtest:qqkj609un9sl896yezxj0j5hxagk7h7pnyyzaz887x");
@@ -419,7 +415,7 @@ describe("URI", function () {
 
   it("should input/output String", function () {
     var str =
-      "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?" +
+      "hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?" +
       "message=Donation%20for%20project%20xyz&label=myLabel&other=xD";
     URI.fromString(str).toString().should.equal(str);
 
@@ -431,7 +427,7 @@ describe("URI", function () {
 
   it("should input/output JSON", function () {
     var json = JSON.stringify({
-      address: "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m",
+      address: "hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m",
       message: "Donation for project xyz",
       label: "myLabel",
       other: "xD",
@@ -440,13 +436,13 @@ describe("URI", function () {
   });
 
   it("should support numeric amounts", function () {
-    var uri = new URI("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=12.10001");
+    var uri = new URI("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=12.10001");
     expect(uri.amount).to.be.equal(1210001000);
   });
 
   it("should support extra arguments", function () {
     var uri = new URI(
-      "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?" +
+      "hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?" +
         "message=Donation%20for%20project%20xyz&label=myLabel&other=xD"
     );
 
@@ -465,7 +461,7 @@ describe("URI", function () {
       address: "qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m",
     })
       .toString()
-      .should.equal("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
+      .should.equal("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
 
     new URI({
       address: "qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m",
@@ -475,13 +471,13 @@ describe("URI", function () {
     })
       .toString()
       .should.equal(
-        "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.10001&message=Hello%20World&something=else"
+        "hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m?amount=1.10001&message=Hello%20World&something=else"
       );
   });
 
   it("should be case insensitive to protocol", function () {
-    var uri1 = new URI("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
-    var uri2 = new URI("bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
+    var uri1 = new URI("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
+    var uri2 = new URI("hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m");
 
     uri1.address.toString().should.equal(uri2.address.toString());
   });
@@ -495,7 +491,7 @@ describe("URI", function () {
   });
 
   it("displays nicely on the console (#inspect)", function () {
-    var uri = "bitcoincash:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m";
+    var uri = "hoosat:qzruaav37d2hwqfaqvsktwdqjly502s06qfra0qe9m";
     var instance = new URI(uri);
     instance.inspect().should.equal("<URI: " + uri + ">");
   });

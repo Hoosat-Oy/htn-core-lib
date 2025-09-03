@@ -354,7 +354,7 @@ describe("PublicKey", function () {
     it("should output this known mainnet address correctly", function () {
       var pk = new PublicKey("03c87bd0e162f26969da8509cafcb7b8c8d202af30b928c582e263dd13ee9a9781");
       var address = pk.toAddress("livenet");
-      address.toString().should.equal("bitcoincash:qp3awknl3dz8ezu3rmapff3phnzz95kansf0r3rs4x");
+      address.toString().should.equal("hoosat:qp3awknl3dz8ezu3rmapff3phnzz95kansf0r3rs4x");
     });
 
     it("should output this known testnet address correctly", function () {

@@ -249,7 +249,7 @@ describe("PrivateKey", function () {
     it("should output this known livenet address correctly", function () {
       var privkey = PrivateKey.fromWIF("L3T1s1TYP9oyhHpXgkyLoJFGniEgkv2Jhi138d7R2yJ9F4QdDU2m");
       var address = privkey.toAddress();
-      address.toString().should.equal("bitcoincash:qp3awknl3dz8ezu3rmapff3phnzz95kansf0r3rs4x");
+      address.toString().should.equal("hoosat:qp3awknl3dz8ezu3rmapff3phnzz95kansf0r3rs4x");
     });
 
     it("should output this known testnet address correctly", function () {
@@ -433,7 +433,7 @@ describe("PrivateKey", function () {
 
   it("creates an address as expected from WIF, livenet", function () {
     var privkey = new PrivateKey("5J2NYGstJg7aJQEqNwYp4enG5BSfFdKXVTtBLvHicnRGD5kjxi6");
-    privkey.publicKey.toAddress().toString().should.equal("bitcoincash:qqtv79nz6p246lxt6ja526nhmgdk5qtn9gdc6kt4us");
+    privkey.publicKey.toAddress().toString().should.equal("hoosat:qqtv79nz6p246lxt6ja526nhmgdk5qtn9gdc6kt4us");
   });
 
   it("creates an address as expected from WIF, testnet", function () {
