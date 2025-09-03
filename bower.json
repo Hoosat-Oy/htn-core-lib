@@ -1,12 +1,12 @@
 {
-  "name": "kaspacore-lib",
-  "main": "./kaspacore-lib.min.js",
+  "name": "hoosatcore-lib",
+  "main": "./hoosatcore-lib.min.js",
   "version": "0.0.1",
-  "homepage": "http://kaspacore.io",
-  "authors": ["kaspa"],
+  "homepage": "http://hoosatcore.io",
+  "authors": ["hoosat"],
   "description": "A pure, powerful core for your bitcoin project.",
   "moduleType": ["globals"],
-  "keywords": ["bitcoin", "kaspacore", "btc", "satoshi"],
+  "keywords": ["bitcoin", "hoosatcore", "btc", "satoshi"],
   "license": "MIT",
   "ignore": [
     "**/.*",
