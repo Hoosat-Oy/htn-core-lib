@@ -5,7 +5,7 @@ Based on the popular [Bitcore library](https://github.com/bitpay/bitcore) develo
 ## Get Started
 
 ```sh
-git clone git@github.com:aspectron/hoosatcore-lib
+git clone git@github.com:aspectron/htn-core-lib
 ```
 
 Adding Hoosatcore to your app's `package.json`:
