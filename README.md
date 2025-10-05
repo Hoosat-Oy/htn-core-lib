@@ -1,7 +1,5 @@
 # JavaScript Data Primitives Library for Hoosat
 
-**PLEASE NOTE: This project is under heavy development and is not production ready**
-
 Based on the popular [Bitcore library](https://github.com/bitpay/bitcore) developed by BitPay for the Bitcoin, Hoosatcore library provides primitives for interfacing with the Hoosat network.
 
 ## Get Started
