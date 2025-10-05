@@ -12,7 +12,7 @@ Adding htn-core to your app's `package.json`:
 
 ```json
 "dependencies": {
-    "aspectron/htn-core-lib": "*"
+    "./htn-core-lib": "*"
 }
 ```
 
