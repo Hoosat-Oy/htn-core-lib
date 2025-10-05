@@ -1,6 +1,6 @@
 # JavaScript Data Primitives Library for Hoosat
 
-Based on the popular [Bitcore library](https://github.com/bitpay/bitcore) developed by BitPay for the Bitcoin, Hoosatcore library provides primitives for interfacing with the Hoosat network.
+Based on the popular [Bitcore library](https://github.com/bitpay/bitcore) developed by BitPay for the Bitcoin, htn-core library provides primitives for interfacing with the Hoosat network.
 
 ## Get Started
 
@@ -8,17 +8,17 @@ Based on the popular [Bitcore library](https://github.com/bitpay/bitcore) develo
 git clone git@github.com:aspectron/htn-core-lib
 ```
 
-Adding Hoosatcore to your app's `package.json`:
+Adding htn-core to your app's `package.json`:
 
 ```json
 "dependencies": {
-    "aspectron/hoosatcore-lib": "*"
+    "aspectron/htn-core-lib": "*"
 }
 ```
 
 ## Hoosat adaptation
 
-Hoosatcore library provides primitives such as Transaction and UTXO data structures customized for use with the next-generation high-performance Hoosat network.
+htn-core library provides primitives such as Transaction and UTXO data structures customized for use with the next-generation high-performance Hoosat network.
 
 ## Documentation
 
@@ -26,13 +26,13 @@ The complete docs are hosted here: [bitcore documentation](https://github.com/bi
 
 ## Building the Browser Bundle
 
-To build a hoosatcore-lib full bundle for the browser:
+To build a htn-core-lib full bundle for the browser:
 
 ```sh
 gulp browser
 ```
 
-This will generate files named `hoosatcore-lib.js` and `hoosatcore-lib.min.js`.
+This will generate files named `htn-core-lib.js` and `htn-core-lib.min.js`.
 
 You can also use our pre-generated files, provided for each release along with a PGP signature by one of the project's maintainers. To get them, checkout the [releases](https://github.com/bitpay/bitcore/blob/master/packages/bitcore-lib/CHANGELOG.md).
 
@@ -45,4 +45,4 @@ See [CONTRIBUTING.md](https://github.com/bitpay/bitcore/blob/master/Contributing
 Code released under [the MIT license](https://github.com/bitpay/bitcore/blob/master/LICENSE).
 
 Bitcore - Copyright 2013-2019 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.  
-Hoosatcore - Copyright 2020 ASPECTRON Inc.
+htn-core - Copyright 2020 ASPECTRON Inc.
